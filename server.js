@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
 app.set('io', io);
 
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Backend running successfully — http://localhost:${PORT}`);
 });
 
 export { io };

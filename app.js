@@ -52,6 +52,15 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, timestamp: new Date().toISOString() });
 });
 
+/** Root — browsers often request `/`; API lives under `/api`. */
+app.get('/', (_req, res) => {
+  res.json({
+    ok: true,
+    message: 'Backend running successfully.',
+    service: 'e-commerce-api',
+  });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/catalog', catalogRoutes);
 app.use('/api/admin', adminAuthRoutes);
