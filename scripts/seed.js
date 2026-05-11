@@ -2,7 +2,7 @@
  * Seed MongoDB with sample admin, customers, products, and one order.
  * Run: npm run seed   (from backend/)
  *
- * Requires MongoDB running and MONGODB_URL (or defaults to mongodb://127.0.0.1:27017/ecommerce).
+ * Requires MongoDB running and MONGODB_URL (or defaults to mongodb://localhost:27017/ecommerce).
  */
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
@@ -13,7 +13,7 @@ import Order from '../models/Order.js';
 
 dotenv.config();
 
-const DEFAULT_URI = 'mongodb://127.0.0.1:27017/ecommerce';
+const DEFAULT_URI = 'mongodb://localhost:27017/ecommerce';
 
 const PRODUCTS = [
   {
