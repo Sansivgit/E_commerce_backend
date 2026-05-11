@@ -28,6 +28,8 @@
 const LIVE_CLIENT_ORIGINS = [
   'https://e-commerce-frontend-ygbl.onrender.com',
   'https://e-commerce-admin-z3wz.onrender.com',
+  'https://e-commerce-backend-hwch.onrender.com'
+  
 ];
 
 const LOCAL_DEV_ORIGINS = [
