@@ -12,6 +12,7 @@ import { ensureDefaultAdmin } from './utils/ensureDefaultAdmin.js';
 import { ensureClothTypes } from './utils/ensureClothTypes.js';
 import { ensureEmailTemplates } from './utils/ensureEmailTemplates.js';
 import app from './app.js';
+import { getCorsAllowedOrigins } from './config/corsOrigins.js';
 
 await connectDB();
 await ensureDefaultAdmin();
@@ -24,7 +25,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL?.split(',') || '*',
+    origin: getCorsAllowedOrigins(),
     methods: ['GET', 'POST'],
   },
 });

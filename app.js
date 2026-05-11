@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, '.env') });
 
 import { errorHandler, notFound } from './middlewares/errorHandler.js';
+import { getCorsAllowedOrigins } from './config/corsOrigins.js';
 
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
@@ -40,7 +41,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: process.env.CLIENT_URL?.split(',') || true,
+    origin: getCorsAllowedOrigins(),
     credentials: true,
   }),
 );
